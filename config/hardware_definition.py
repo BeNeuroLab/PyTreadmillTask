@@ -2,7 +2,7 @@ from devices import *
 
 board = Breakout_dseries_1_6()
 
-usb_uart = USB_UART()
+usb_uart = USB_UART('read')
 
 # # Instantiate Devices.
 

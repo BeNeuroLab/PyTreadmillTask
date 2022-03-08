@@ -2,7 +2,7 @@ from pyControl.utility import *
 import hardware_definition as hw
 
 states = ['init']
-events = []
+events = ['read']
 initial_state = 'init'
 
 # def run_start():
@@ -12,12 +12,14 @@ initial_state = 'init'
 #     hw.off()
 #     print('run_end()')
 
+hw.usb_uart.start_test()
+
 def init(event):
-    hw.usb_uart.start_testing()
     if event == 'entry':
         print('entering init')
     elif event == 'exit':
         print('exiting init')
     elif event == 'read':
-        print(hw.usb_uart.buffer)
+        # for i in range(len(hw.usb_uart.buffer)):
+        print(hw.usb_uart.output)
     
